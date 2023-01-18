@@ -4,7 +4,7 @@ const express = require('express')
 // require('dotenv').config()
 const app=express()
 const cors =require('cors')
-// const PORT=process.env.PORT;
+const port=process.env.PORT || 8080;
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
@@ -12,6 +12,6 @@ app.use(cors())
 
 app.get('/',(req,res)=>res.send('hello'))
 
-app.listen(8080,async()=>{
+app.listen(port,async()=>{
 // await connect()
-console.log(`listening at http://localhost:8080`)})
+console.log(`listening at http://localhost:port`)})
